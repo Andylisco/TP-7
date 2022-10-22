@@ -8,14 +8,16 @@ public class Seguro {
 	private int CostoContratacion;
 	private int CostoAsegurado;
 	
-	
-	public void Seguro()
+	public Seguro() {
+		
+	}
+	public Seguro(int id, String descripcion, int idtipo, int costoCon,int costoAse)
 	{
-		this.id = 0;
-		this.descripcion = "";
-		this.idTipo = 0;
-		this.CostoContratacion = 0;
-		this.CostoAsegurado = 0;
+		this.id = id;
+		this.descripcion = descripcion;
+		this.idTipo = idtipo;
+		this.CostoContratacion = costoCon;
+		this.CostoAsegurado = costoAse;
 	}
 
 
