@@ -1,7 +1,7 @@
 <%@ page import="dominio.Seguro" %>
 <%@ page import ="java.io.*"%>
 <%@ page import ="java.util.*"%>
-<%@ page import ="java.util.List.*"%>
+<%@ page import ="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -53,32 +53,14 @@
 			<b>Seguro agregado con exito.</b>
 	<%} %>
 
-	<%
-	ArrayList<Seguro> ListSeg = null;
-	if (request.getAttribute("ListaSeguros")!=null)
-	{
-			//ME tira error al castear el dato por eso lo comente			
-			//ListSeg = (ArrayList<Seguro>)request.getAttribute("ListaSeguros");
-			
-				for (Seguro Seg : ListSeg)
-				{
-					
-				
-				//SI ENTRA ACA NO ES PAGINA INICIAL
-				PaginaInicial = false;
-			%>
-			ACA VA LA TABLA
 	
-	<%			}		
-			
-	}	%>
 	
 	
 	<%
 	if (PaginaInicial)
 	{%>
 	<br><br>
-		<h1>Soy la pagina Inicial</h1>
+		<h1>Soy la pagina Inicio</h1>
 	<% }	
 	%>
 
