@@ -30,7 +30,7 @@
 	
 <h1>Agregar Seguros</h1>
 <form action="serveletSeguro" method="get">
-	Id Seguro   <%=seg.getContador() %>
+	Id Seguro   <input type="text" name= "txtId" value="  <%=seg.getContador()%>">
 	<br/>
 	Descripcion <input type="text" name= "txtDescripcion"/>
 	<br/>

@@ -49,7 +49,6 @@ public class serletSeguro extends HttpServlet {
 		if (request.getParameter("btnAceptar")!= null) {
 			System.out.println("mensaje boton Aceptar");
 			Seguro seg = new Seguro();
-			seg.setId(Integer.parseInt(request.getParameter("txtId")));
 			seg.setDescripcion(request.getParameter("txtDescripcion"));
 			seg.setIdTipo(Integer.parseInt(request.getParameter("tipoSeguro")));
 			seg.setCostoContratacion(Integer.parseInt(request.getParameter("txtCosto")));
