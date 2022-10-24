@@ -17,52 +17,8 @@
   <a href="serletSeguro?Param2=2">Listar Seguro</a>
 
 </form>
-
-<%
-	//DECLARO UNA BANDERA PARA SABER SI ES LA PAGINA INICIAL
-	boolean PaginaInicial = true; 
-%>
-
-	<%
-	
-	
-	if (request.getAttribute("MostrarForm") != null) 
-	{ 
-		//SI ENTRA ACA NO ES PAGINA INICIAL VA AL FORMULARIO DE AGREGAR
-		PaginaInicial = false;
-		%>
-	<form>
-			Aca va el form	
-	</form>
-	
-	<%} %>
-
-
-	<%	
-	//DELCARO 
-		int filas = 0;
-		//SI RECIBo CantGraba LO ASIGNO A filas
-		if (request.getAttribute("CantGraba")!=null)
-		{
-			filas = Integer.parseInt(request.getAttribute("CantGraba").toString()) ;	
-		}		
-		if (filas == 1){
-			//SI ENTRA ACA NO ES PAGINA INICIAL
-			PaginaInicial = false;
-		%>
-			<b>Seguro agregado con exito.</b>
-	<%} %>
-
-	
-	
-	
-	<%
-	if (PaginaInicial)
-	{%>
-	<br><br>
 		<h1>Soy la pagina Inicio</h1>
-	<% }	
-	%>
+	
 
 </body>
 </html>

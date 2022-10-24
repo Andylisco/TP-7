@@ -27,7 +27,7 @@ public class SeguroDaoImpl implements SeguroDao {
 					//System.out.println("mod4");
 					pst = cn.prepareStatement("INSERT INTO seguros(idSeguro,descripcion,idTipo,costoContratacion, CostoAsegurado) VALUES(?,?,?,?,?)");
 					//System.out.println(persona.toString());
-					pst.setInt(1, Seg.getId());
+					pst.setInt(1, Seg.getContador());
 					pst.setString(2, Seg.getDescripcion());
 					pst.setInt(3, Seg.getIdTipo());
 					pst.setInt(4, Seg.getCostoContratacion());

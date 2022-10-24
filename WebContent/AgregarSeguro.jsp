@@ -1,4 +1,5 @@
 <%@ page import="dominio.Seguro" %>
+<%@ page import="dominio.TipoSeguros" %>
 <%@ page import ="java.io.*"%>
 <%@ page import ="java.util.*"%>
 <%@ page import ="java.util.List.*"%>
@@ -16,15 +17,31 @@
 	<a href="serletSeguro?Param=1">Agregar seguro</a>
 	<a href="serletSeguro?Param2=2">Listar Seguro</a>
 </form>
+<%
+	ArrayList<TipoSeguros> ListTipoSeg = null;
+	int autonumerico = 0;
+	Seguro seg = new Seguro();
+	if (request.getAttribute("ListaTipoSeguros")!=null)
+	{
+			//ME tira error al castear el dato por eso lo comente			
+			ListTipoSeg = (ArrayList<TipoSeguros>)request.getAttribute("ListaTipoSeguros");
+	}%>
+	
+	
 <h1>Agregar Seguros</h1>
 <form action="serveletSeguro" method="get">
-	Id Seguro   <input value= "1"/>
+	Id Seguro   <%=seg.getContador() %>
 	<br/>
 	Descripcion <input type="text" name= "txtDescripcion"/>
 	<br/>
-	Tipo de seguro <select name="tipo de seguro">
-	<option value="1"/>
-	</select> 
+	
+	Tipo de seguro <select name="TipoSeguro">
+     <%for(TipoSeguros TipoSeg : ListTipoSeg)
+			{
+			 %>
+			 <option><%=TipoSeg.getDescripcion() %> </option> 	
+	<%} %>
+</select>
 	
 	<br/>
 	Costo contratacion <input type="text" name = "txtCosto"/>
@@ -32,6 +49,26 @@
 	Costo máximo asegurado <input type="text" name = "txtCostoAsegurado"/>
 	<br/>
 	<input type="submit" value="aceptar" name ="btnAceptar"/>
+	
+	
+
+
+	<%	
+	//DELCARO 
+		int filas = 0;
+		//SI RECIBo CantGraba LO ASIGNO A filas
+		if (request.getAttribute("CantGraba")!=null)
+		{
+			filas = Integer.parseInt(request.getAttribute("CantGraba").toString()) ;	
+		}		
+		if (filas == 1){
+			//SI ENTRA ACA NO ES PAGINA INICIAL
+			//PaginaInicial = false;
+		%>
+			<b>Seguro agregado con exito.</b>
+	<%} %>
+
+	
 </form>
 </body>
 </html>
